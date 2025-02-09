@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pricing Plan</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo-contain">
+           <img src="/Images/1.jpg" class="logo" alt="Company Logo">
+           <a href="#pricing" class="nav-link">Pricing</a>
+        </div>
+        <nav>
+            <a href="#signin" class="nav-link">Sign In</a>
+        </nav>
+    </div>
+
+    <div class="center">
+         <h1>Pricing Plans</h1>
+         <p>Start building for free, then add a site plan to go live. Account <br>
+            plans unlock additional features.</p>
+          <section class="bill-contain">
+            <div class="billing">
+             <button class="bill-option" onclick="updatePlans('monthly')">Monthly billing</button>
+             <button class="bill-option" onclick="updatePlans('yearly')">Yearly billing</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="container" id="plans-container">
+        <div class="card">
+            <h3>Hobby</h3> 
+            <p>All the basics for starting a new business.</p>
+            <div class="price" id="hobby-price">
+                <h1>$100<span>/year</span></h1>
+            </div>
+            <div class="subscribe">Subscribe</div>
+        </div>
+
+        <div class="card">
+            <h3>Freelancer</h3> 
+            <p>All the basics for starting a new business.</p>
+            <div class="price" id="freelancer-price">
+                <h1>$200<span>/year</span></h1>
+            </div>
+            <div class="subscribe">Subscribe</div>
+        </div>
+
+        <div class="card">
+            <h3>Startup</h3> 
+            <p>All the basics for starting a new business.</p>
+            <div class="price" id="startup-price">
+                <h1>$300<span>/year</span></h1>
+            </div>
+            <div class="subscribe">Subscribe</div>
+        </div>
+    </div>
+
+    <script>
+        function updatePlans(billingType) {
+            const hobbyPriceElement = document.getElementById('hobby-price');
+            const freelancerPriceElement = document.getElementById('freelancer-price');
+            const startupPriceElement = document.getElementById('startup-price');
+
+            if (billingType === 'monthly') {
+                hobbyPriceElement.innerHTML = '<h1>$12<span>/month</span></h1>';
+                freelancerPriceElement.innerHTML = '<h1>$24<span>/month</span></h1>';
+                startupPriceElement.innerHTML = '<h1>$32<span>/month</span></h1>';
+            } else {
+                hobbyPriceElement.innerHTML = '<h1>$100<span>/year</span></h1>';
+                freelancerPriceElement.innerHTML = '<h1>$200<span>/year</span></h1>';
+                startupPriceElement.innerHTML = '<h1>$300<span>/year</span></h1>';
+            }
+        }
+    </script>
+
+</body>
+</html>
